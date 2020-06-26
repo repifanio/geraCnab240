@@ -1,8 +1,8 @@
 const { format } = require('date-fns')
 
-class CreateHeaderLote {
+class CreateDetalheLoteSegmentoP {
     run() {
-        const headerLote = ''
+        const detalheLoteSegmentoP = ''
 
         const codigoBanco = '104' // Caixa Econômica Federal
         const loteServicoHeaderArquivo = '0001' // Sequencial para o arquivo
@@ -47,7 +47,7 @@ class CreateHeaderLote {
         const nrContrato = '0'.padStart(10, '0')
         const febrabanCnabExclusivo2 = ' '
 
-        const retorno = headerLote.concat(  
+        const retorno = detalheLoteSegmentoP.concat(  
             codigoBanco,
             loteServicoHeaderArquivo,
             tipoRegistro,
@@ -96,4 +96,4 @@ class CreateHeaderLote {
     }
 }
 
-module.exports = new CreateHeaderLote();
+module.exports = new CreateDetalheLoteSegmentoP();
