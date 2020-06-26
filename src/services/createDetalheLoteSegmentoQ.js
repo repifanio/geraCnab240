@@ -1,5 +1,3 @@
-const { format } = require('date-fns')
-
 class CreateDetalheLoteSegmentoQ {
     run() {
         const detalheLoteSegmentoQ = ''
