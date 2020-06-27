@@ -4,6 +4,7 @@ const detalheLoteSgtoP = require('../services/createDetalheLoteSegmentoP')
 const detalheLoteSgtoQ = require('../services/createDetalheLoteSegmentoQ')
 const detalheLoteSgtoR = require('../services/createDetalheLoteSegmentoR')
 const trailerLote = require('../services/createtrailerLote')
+const trailerFile = require('../services/createTrailerFile')
 
 class BoletoController {
 
@@ -14,6 +15,7 @@ class BoletoController {
         const lineDetalheLoteSgtoQ = detalheLoteSgtoQ.run()
         const lineDetalheLoteSgtoR = detalheLoteSgtoR.run()
         const lineTrailerLote = trailerLote.run()
+        const lineTrailerFile = trailerFile.run()
 
         const retorno = {
             header_file: lineHeaderFile,
@@ -22,6 +24,7 @@ class BoletoController {
             detalhe_segmento_q: lineDetalheLoteSgtoQ,
             detalhe_segmento_R: lineDetalheLoteSgtoR,
             trailer_lote: lineTrailerLote,
+            trailer_file: lineTrailerFile
         }
 
         return res.json(retorno)
