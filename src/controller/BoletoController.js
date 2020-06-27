@@ -5,6 +5,7 @@ const detalheLoteSgtoQ = require('../services/createDetalheLoteSegmentoQ')
 const detalheLoteSgtoR = require('../services/createDetalheLoteSegmentoR')
 const trailerLote = require('../services/createtrailerLote')
 const trailerFile = require('../services/createTrailerFile')
+const gerarArquivo = require('../services/gerarArquivo')
 
 class BoletoController {
 
@@ -16,7 +17,19 @@ class BoletoController {
         const lineDetalheLoteSgtoR = detalheLoteSgtoR.run()
         const lineTrailerLote = trailerLote.run()
         const lineTrailerFile = trailerFile.run()
-
+        try {
+        gerarArquivo.run(
+            lineHeaderFile, 
+            lineHeaderLote, 
+            lineDetalheLoteSgtoP, 
+            lineDetalheLoteSgtoQ,
+            lineDetalheLoteSgtoR,
+            lineTrailerLote,
+            lineTrailerFile)
+        } catch (err) {
+            console.log(err.message)
+        }
+        
         const retorno = {
             header_file: lineHeaderFile,
             header_lote: lineHeaderLote,
