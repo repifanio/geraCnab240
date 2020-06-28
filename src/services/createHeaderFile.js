@@ -4,56 +4,58 @@ class CreateHeaderFile {
     run() {
         const headerFile = '';
 
-        const codigoBanco = '104' // Caixa Econômica Federal
-        const loteServicoHeaderArquivo = '0000' // Default para header do arquivo
-        const tipoRegistro = '0' // Default para header do arquivo
-        const febrabanCnabExclusivo = ''.padStart(9, ' ') // Código utilizado pela febraban
-        const tipoInscricaoEmpresa = '2' // Tipo 2 é CNPJ
-        const nrInscricaoEmpresa = '74828799000145' // Nr do cnpj da empresa
-        const codigoConvenioBanco = ''.padStart(20, ' ') // Código do convênio banco-empresa
-        const codAgencia = '8572'.padStart(5,'0') // Número da agencia
-        const digitoVerificadorAgencia = ''.padStart(1, ' ') // Digito verificador da agencia
-        const nrContaBancaria = '05684'.padStart(12, '0') // Número da conta
-        const digitoVerificadorConta = '7' // Digito verificador da conta
-        const digitoVerificadorAgenciaConta = ''.padStart(1, ' ') // Digito verificador da agencia e conta
-        const nomeEmpresa = 'Empresa de teste de CNAB 240'.substr(0, 30).padEnd(30, ' ') // Nome da empresa
-        const nomeBanco = 'Caixa Economica federal'.substr(0, 30).padEnd(30, ' ') // Nome do banco
-        const febrabanCnabExclusivo2 = ''.padStart(10, ' ') // Código utilizado pela febraban
-        const codRemessaRetorno = '1' // Código que identifica se é remessa ou retorno. 1 p/ remessa
-        const dataGeracaoArquivo = format(new Date(), 'ddMMyyyy') // Data da geração do arquivo
-        const horaGeracaoArquivo = format(new Date(), 'HHmmss') // Hora da geração do arquivo
-        const sequencialArquivo = '1'.padStart(6, '0') // Sequencial único do arquivo
-        const nrVersaoLayout = '103' // Numero de layout. Fixo 103    
-        const densidadeGravacaoArquivo = '1600'.padStart(5, '0') // Densidade de gravação. Verificar essa info
-        const observacaoParaBanco = ''.padStart(20, ' ')
-        const observacaoParaEmpresa = ''.substr(0, 20).padEnd(20, ' ')
-        const febrabanCnabExclusivo3 = ''.padStart(29, ' ') // Código utilizado pela febraban
+        const obj = {
+            codigoBanco: '104',
+            loteServicoHeaderArquivo: '0000',
+            tipoRegistro: '0',
+            febrabanCnabExclusivo: ''.padStart(9, ' '),
+            tipoInscricaoEmpresa: '2',
+            nrInscricaoEmpresa: '74828799000145',
+            codigoConvenioBanco: ''.padStart(20, ' '),
+            codAgencia: '8572'.padStart(5,'0'),
+            digitoVerificadorAgencia: ''.padStart(1, ' '),
+            nrContaBancaria: '05684'.padStart(12, '0'),
+            digitoVerificadorConta: '7',
+            digitoVerificadorAgenciaConta: ''.padStart(1, ' '),
+            nomeEmpresa: 'Empresa de teste de CNAB 240'.substr(0, 30).padEnd(30, ' '),
+            nomeBanco: 'Caixa Economica federal'.substr(0, 30).padEnd(30, ' '),
+            febrabanCnabExclusivo2: ''.padStart(10, ' '),
+            codRemessaRetorno: '1',
+            dataGeracaoArquivo: format(new Date(), 'ddMMyyyy'),
+            horaGeracaoArquivo: format(new Date(), 'HHmmss'),
+            sequencialArquivo: '1'.padStart(6, '0'),
+            nrVersaoLayout: '103',
+            densidadeGravacaoArquivo: '1600'.padStart(5, '0'),
+            observacaoParaBanco: ''.padStart(20, ' '),
+            observacaoParaEmpresa: ''.substr(0, 20).padEnd(20, ' '),
+            febrabanCnabExclusivo3: ''.padStart(29, ' '),
+        }
         
         const retorno = headerFile.concat(
-            codigoBanco,
-            loteServicoHeaderArquivo,
-            tipoRegistro,
-            febrabanCnabExclusivo,
-            tipoInscricaoEmpresa,
-            nrInscricaoEmpresa,
-            codigoConvenioBanco,
-            codAgencia,
-            digitoVerificadorAgencia,
-            nrContaBancaria,
-            digitoVerificadorConta,
-            digitoVerificadorAgenciaConta,
-            nomeEmpresa,
-            nomeBanco,
-            febrabanCnabExclusivo2,
-            codRemessaRetorno,
-            dataGeracaoArquivo,
-            horaGeracaoArquivo,
-            sequencialArquivo, 
-            nrVersaoLayout,
-            densidadeGravacaoArquivo,
-            observacaoParaBanco,
-            observacaoParaEmpresa,
-            febrabanCnabExclusivo3
+            obj.codigoBanco,
+            obj.loteServicoHeaderArquivo,
+            obj.tipoRegistro,
+            obj.febrabanCnabExclusivo,
+            obj.tipoInscricaoEmpresa,
+            obj.nrInscricaoEmpresa,
+            obj.codigoConvenioBanco,
+            obj.codAgencia,
+            obj.digitoVerificadorAgencia,
+            obj.nrContaBancaria,
+            obj.digitoVerificadorConta,
+            obj.digitoVerificadorAgenciaConta,
+            obj.nomeEmpresa,
+            obj.nomeBanco,
+            obj.febrabanCnabExclusivo2,
+            obj.codRemessaRetorno,
+            obj.dataGeracaoArquivo,
+            obj.horaGeracaoArquivo,
+            obj.sequencialArquivo, 
+            obj.nrVersaoLayout,
+            obj.densidadeGravacaoArquivo,
+            obj.observacaoParaBanco,
+            obj.observacaoParaEmpresa,
+            obj.febrabanCnabExclusivo3
         )
 
         return retorno

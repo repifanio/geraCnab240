@@ -3,24 +3,26 @@ class CreateTrailerFile {
     run() {
         const trailerFile = ''
 
-        const codigoBanco = '104' // Caixa Econômica Federal
-        const loteServicoHeaderArquivo = '9999' // Default para header do arquivo
-        const tipoRegistro = '9' // Default para header do arquivo
-        const febrabanCnabExclusivo = ''.padStart(9, ' ') // Código utilizado pela febraban
-        const qtdLotesArquivo = '1'.padStart(6, '0')
-        const qtdRegistrosArquivo = '1'.padStart(6, '0')
-        const qtdContasConciliadas = '0'.padStart(6, '0')
-        const febrabanCnabExclusivo2 = ''.padStart(205, ' ')
+        const obj = {
+            codigoBanco: '104',
+            loteServicoHeaderArquivo: '9999',
+            tipoRegistro: '9',
+            febrabanCnabExclusivo: ''.padStart(9, ' '),
+            qtdLotesArquivo: '1'.padStart(6, '0'),
+            qtdRegistrosArquivo: '1'.padStart(6, '0'),
+            qtdContasConciliadas: '0'.padStart(6, '0'),
+            febrabanCnabExclusivo2: ''.padStart(205, ' '),
+        }
 
         const retorno = trailerFile.concat(  
-            codigoBanco,
-            loteServicoHeaderArquivo,
-            tipoRegistro,
-            febrabanCnabExclusivo,
-            qtdLotesArquivo,
-            qtdRegistrosArquivo,
-            qtdContasConciliadas,
-            febrabanCnabExclusivo2,
+            obj.codigoBanco,
+            obj.loteServicoHeaderArquivo,
+            obj.tipoRegistro,
+            obj.febrabanCnabExclusivo,
+            obj.qtdLotesArquivo,
+            obj.qtdRegistrosArquivo,
+            obj.qtdContasConciliadas,
+            obj.febrabanCnabExclusivo2,
         );
 
         return retorno
